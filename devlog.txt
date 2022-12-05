@@ -19,7 +19,24 @@ project 1
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-Jun Hong W -- 2022-12-2 13:20
+JunHongW -- 2022-12-2 13:20
 --------------------------------------------------------------
 Initialized repo
+==============================================================
+
+JunHongW -- 2022-12-5 13:00
+--------------------------------------------------------------
+Added flag, edited readme
+==============================================================
+
+All -- 2022-12-5 13:20
+--------------------------------------------------------------
+Edited design doc, ideas, APIs, settled on movie recommendations
+Basic idea of what features to use from Bootstrap to make website and what website should look like
+Fleshing out design doc, with some possible stretch goals added
+==============================================================
+
+JunHongW -- 2022-12-5 13:20
+--------------------------------------------------------------
+Assigned roles (subject to change as project evolves)
 ==============================================================
