@@ -31,12 +31,19 @@ Added flag, edited readme
 
 All -- 2022-12-5 13:20
 --------------------------------------------------------------
-Edited design doc, ideas, APIs, settled on movie recommendations
-Basic idea of what features to use from Bootstrap to make website and what website should look like
-Fleshing out design doc, with some possible stretch goals added
+* Edited design doc, ideas, APIs, settled on movie recommendations
+* Basic idea of what features to use from Bootstrap to make website and what website should   look like
+* Fleshing out design doc, with some possible stretch goals added
 ==============================================================
 
 JunHongW -- 2022-12-5 13:20
 --------------------------------------------------------------
 Assigned roles (subject to change as project evolves)
+==============================================================
+
+williamG -- 2022-12-5 21:25
+--------------------------------------------------------------
+* updated design doc with necessary components, relationship between components
+and data organization
+* searched and tested some APIs that we might used
 ==============================================================
