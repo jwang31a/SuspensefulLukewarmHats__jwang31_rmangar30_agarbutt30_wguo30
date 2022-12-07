@@ -47,3 +47,15 @@ williamG -- 2022-12-5 21:25
 and data organization
 * searched and tested some APIs that we might used
 ==============================================================
+
+JunHongW -- 2022-12-6 21:00
+--------------------------------------------------------------
+* Feedback from Spicy Vanilla: 
+  * Is the recommendation button random or based on user preferences, ratings, date
+  * Priority list (but we have one already)
+  * What would search results look like? What about incomplete query?
+  * Are user preferences on home page?
+  * Where is saved movies page? On home page?
+  * What will we see when genre selected? Will it be alphabetically sorted or latest on top?
+* Addressed concerns in design doc, revised accordingly
+==============================================================
