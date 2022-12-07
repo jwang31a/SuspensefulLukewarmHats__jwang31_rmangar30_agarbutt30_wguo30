@@ -59,3 +59,8 @@ JunHongW -- 2022-12-6 21:00
   * What will we see when genre selected? Will it be alphabetically sorted or latest on top?
 * Addressed concerns in design doc, revised accordingly
 ==============================================================
+
+williamG -- 2022-12-6 23:56
+--------------------------------------------------------------
+* updated design doc with APIs (both new ones and tested older ones) 
+==============================================================
