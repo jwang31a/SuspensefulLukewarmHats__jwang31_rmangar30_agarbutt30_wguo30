@@ -69,3 +69,10 @@ JunHongW -- 2022-12-7 21:50
 --------------------------------------------------------------
 * made sure deliverables were there (edited readme, requirements, working app)
 ==============================================================
+
+RavindraM -- 2022-12-8 13:13
+--------------------------------------------------------------
+* created auth.py, inputted database creation, adding accounts,
+and exporting accounts to the main Flask file (foo.py) for
+login interpretation.
+==============================================================
