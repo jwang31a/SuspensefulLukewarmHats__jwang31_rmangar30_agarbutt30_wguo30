@@ -77,6 +77,13 @@ and exporting accounts to the main Flask file (foo.py) for
 login interpretation.
 ==============================================================
 
+williamG -- 2022-12-8 13:15
+--------------------------------------------------------------
+* created and uploaded new api cards for omdapi and serpapi
+* updated readme info with new api cards
+* researched new bootstrap features to use for website
+==============================================================
+
 JunHongW -- 2022-12-8 13:20
 --------------------------------------------------------------
 * added to html files and foo.py to make redirects work
