@@ -76,3 +76,9 @@ RavindraM -- 2022-12-8 13:13
 and exporting accounts to the main Flask file (foo.py) for
 login interpretation.
 ==============================================================
+
+JunHongW -- 2022-12-8 13:20
+--------------------------------------------------------------
+* added to html files and foo.py to make redirects work
+* renamed foo.py to __init__.py
+==============================================================
