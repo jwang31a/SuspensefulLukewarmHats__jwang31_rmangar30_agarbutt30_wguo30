@@ -14,6 +14,8 @@
 - https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_MyAnimeList.md
 - https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_NetflixRoulette.md
 - https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_WatchmodeAPI.md
+- https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_serpapi.md
+- https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_omdapi.md
 ---
 ## Launch codes:
 1) open terminal and clone repo.  
