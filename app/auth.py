@@ -25,6 +25,13 @@ def add_accounts(username, password):
 def get_accounts(username, password):
   DB_FILE="accounts.db"
   db = sqlite3.connect(DB_FILE, check_same_thread=False)
+  c = db.cursor()
   c.execute("SELECT * FROM accounts;")
   response = c.fetchall()
-  return response
+  print(response)
+  for account in response:
+    if account[0] == username and account[1] == password:
+      return True
+  return False
+
+print(get_accounts("dudu", "dudu"))
