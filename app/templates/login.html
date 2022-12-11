@@ -42,25 +42,25 @@
           <input type="submit" name="login" value="login">
             -->
         </div>
-        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
-          <form>
-            <div class="form-group">
-              <label>New Username</label>
-              <input type="text" class="form-control" id="username" required placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label>New Password</label>
-              <input type="password" class="form-control" id="password" required placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label>Confirm Password</label>
-              <input type="password" class="form-control" id="password" required placeholder="Password">
-            </div>
-            <br/>
-            <button type="submit" class="btn btn-success">Sign-Up</button>
-          </form>
-        </div>
+        <form action = "/register" method = "post"> 
+          <input type = "submit" class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+        </form>
       </div>
+      <!--
+        <body>
+    <h1>Welcome to Suspenseful Lukewarm Hats' Movie Recommendations!</h1>
+    <form action="/homepage" method="post">
+      <label>Username</label>
+      <input type="text" name="username" minlength="3" required><br>
+      <label>Password</label>
+      <input type="password" name="password" minlength="3" required><br>
+      <input type="submit" name="login" value="login">
     </form>
+    <br> Don't have an account?
+    <form action="/register" method="post">
+      <input type="submit" name="register" value="Create an account">
+    </form>
+      -->
+  
   </body>
 </html>
