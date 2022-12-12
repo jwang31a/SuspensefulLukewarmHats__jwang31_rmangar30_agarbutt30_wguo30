@@ -96,6 +96,13 @@ Aden -- 2022-12-9 12:57
 * added "sessions" so users stay logged in
 ==============================================================
 
+williamG-- 2022-12-11 20:17
+--------------------------------------------------------------
+* updated login template to make register and login one screen
+* added carousel for aesthetics
+* fixed padding for container and columns
+==============================================================
+
 JunHongW -- 2022-12-11 22:00
 --------------------------------------------------------------
 * tried to fix database bugs (nothing being added to database) by changing form actions, removing some new cursors
