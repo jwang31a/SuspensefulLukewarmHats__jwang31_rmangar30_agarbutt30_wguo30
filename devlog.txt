@@ -95,3 +95,10 @@ Aden -- 2022-12-9 12:57
 * added homepage route to __init__.py
 * added "sessions" so users stay logged in
 ==============================================================
+
+JunHongW -- 2022-12-11 22:00
+--------------------------------------------------------------
+* tried to fix database bugs (nothing being added to database) by changing form actions, removing some new cursors
+* possible solution? find out how the cursors work, if it works so that as long as table is same, then uncomment cursor creation
+* changed some render_templates() to redirect()
+==============================================================
