@@ -109,3 +109,13 @@ JunHongW -- 2022-12-11 22:00
 * possible solution? find out how the cursors work, if it works so that as long as table is same, then uncomment cursor creation
 * changed some render_templates() to redirect()
 ==============================================================
+
+williamG-- 2022-12-13 18:30
+--------------------------------------------------------------
+* uploaded API keys into keys folder
+* started working on homepage of website:
+  - made a nav bar with different links
+  - profile dropdown menu with logout function (something like google's method)
+  - created new html pages (anime and theatre) for nav bar to href to
+* sampled with row of cards for anime posters 
+==============================================================
