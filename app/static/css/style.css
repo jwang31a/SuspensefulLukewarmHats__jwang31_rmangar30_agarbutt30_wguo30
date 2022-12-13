@@ -4,7 +4,7 @@ body,
     height: 100%;
 }
 
-.body, .nopadding {
+.body {
     margin: 0;
     padding: 0;
 }
@@ -21,7 +21,17 @@ img {
     margin: 0 auto;
 }
 
-h1 {
-    overflow: hidden;
-    text-align:center;
+h1, .card-title {
+    text-align: center;
+}
+
+.navbar .dropdown-menu-right { 
+    right: 0; 
+    left: auto; 
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
 }
