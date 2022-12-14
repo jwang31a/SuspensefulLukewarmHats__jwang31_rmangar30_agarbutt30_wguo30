@@ -42,12 +42,13 @@ def homepage():
 
 #can be changed and added to /homepage as form button
 #also no way to access this yet
-@app.route("/logout")
+@app.route("/logout", methods = ['POST'])
 def logout():
-    try:
-        session.pop('username') #gets rid of session
-    except:
-        return redirect("/")
+    if "username" in session:
+        try:
+            session.pop('username') #gets rid of session
+        except:
+            return redirect("/")
     #db.close()
     #dbstory.close()
     return redirect("/")#goes home
