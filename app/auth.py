@@ -11,6 +11,9 @@ DB_FILE="accounts.db"
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor()
 
+def test_print(p):
+    print(p)
+
 def verify_accounts():
   #DB_FILE="accounts.db"
   #db = sqlite3.connect(DB_FILE, check_same_thread=False)

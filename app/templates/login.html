@@ -67,22 +67,22 @@
           <!--Login screen-->
           <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
             <h4>Sign Into Your Account</h4>
-            <form action="/homepage" method="post">
+            <form method="post">
               <div class="form-row">
                 <div class="col-md-12">
                   <label>Username</label>
-                  <input type="text" class="form-control my-2 p-3" id="username" placeholder="Username">
+                  <input type="text" name="username_login" class="form-control my-2 p-3" id="username" placeholder="Username">
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
                   <label>Password</label>
-                  <input type="password" class="form-control my-2 p-3" id="password" placeholder="Password">
+                  <input type="password" name="password_login" class="form-control my-2 p-3" id="password" placeholder="Password">
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <button type="submit" class="btn btn-success" value="login">Login</button>
+                  <button type="submit" class="btn btn-success" name="login" value="login">Login</button>
                 </div>
               </div>
 
@@ -99,22 +99,22 @@
           <!--Register screen-->
           <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
             <h4>Create Your Account</h4>
-            <form>
+            <form method="post">
               <div class="form-row">
                 <div class="col-md-12">
                   <label>New Username</label>
-                  <input type="text" class="form-control my-2 p-3" id="username" placeholder="New Username">
+                  <input type="text" name="username_register" class="form-control my-2 p-3" id="username" placeholder="New Username">
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
                   <label>New Password</label>
-                  <input type="password" class="form-control my-2 p-3" id="password" placeholder="New Password">
+                  <input type="password" name="password_register" class="form-control my-2 p-3" id="password" placeholder="New Password">
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <button type="submit" class="btn btn-success" value="register">Register</button>
+                  <button type="submit" class="btn btn-success" name="register" value="register">Register</button>
                 </div>
               </div>
             </form>

@@ -89,7 +89,7 @@ JunHongW -- 2022-12-8 13:20
 * added to html files and foo.py to make redirects work
 ==============================================================
 
-Aden -- 2022-12-9 12:57
+AdenG -- 2022-12-9 12:57
 --------------------------------------------------------------
 * renamed foo.py to __init__.py
 * added homepage route to __init__.py
@@ -117,5 +117,12 @@ williamG-- 2022-12-13 18:30
   - made a nav bar with different links
   - profile dropdown menu with logout function (something like google's method)
   - created new html pages (anime and theatre) for nav bar to href to
-* sampled with row of cards for anime posters 
+* sampled with row of cards for anime posters
+==============================================================
+
+AdenG -- 2022-12-14 01:24
+--------------------------------------------------------------
+* Major revisions to __init__.py (We can login now!!)
+* Updated login.html to now send form data since it just wasn't sending anything before
+* Username and passwords now get added to database
 ==============================================================
