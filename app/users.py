@@ -7,7 +7,7 @@ p01: ArRESTed Development
 
 import os, sqlite3
 
-DB_FILE="accounts.db"
+DB_FILE="users.db"
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor()
 
@@ -16,27 +16,35 @@ def verify_accounts():
   #db = sqlite3.connect(DB_FILE, check_same_thread=False)
   #c = db.cursor()
   try:
-    c.execute("CREATE TABLE accounts(username TEXT, password TEXT);")
+    c.execute("CREATE TABLE accounts(username TEXT_UNIQUE, movies TEXT);")
   except:
     pass
 
-def add_accounts(username, password):
+def add_accounts(username, movies):
   #DB_FILE="accounts.db"
   #db = sqlite3.connect(DB_FILE, check_same_thread=False)
   #c = db.cursor()
-  c.execute("INSERT INTO accounts VALUES(?, ?);", [username, password])
+  current = get_accounts(username)
+  for item in movies:
+    current.append(item)
+  print(f"INSERT: {current}")
+  #try:
+  c.execute("UPDATE accounts WHERE username(?) SET movies(?);")
+  #except:
+  #  c.execute("INSERT INTO accounts VALUES(?, ?);", [username, "_".join(current)])
 
-def get_accounts(username, password):
+def get_accounts(username):
     #DB_FILE="accounts.db"
     #db = sqlite3.connect(DB_FILE, check_same_thread=False)
     #c = db.cursor()
     c.execute("SELECT * FROM accounts;")
     response = c.fetchall()
-    print(response)
+    #print(response)
     for account in response:
-        if account[0] == username and account[1] == password:
-            return True
-    return False
+        if account[0] == username:
+            print(f"GET {account[1]}")
+            return account[1].split("_")
+    return []
 
 #testing if these functions work
 '''
