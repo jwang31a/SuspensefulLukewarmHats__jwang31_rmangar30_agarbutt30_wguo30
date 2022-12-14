@@ -126,3 +126,8 @@ AdenG -- 2022-12-14 01:24
 * Updated login.html to now send form data since it just wasn't sending anything before
 * Username and passwords now get added to database
 ==============================================================
+
+AdenG -- 2022-12-14 12:56
+--------------------------------------------------------------
+* Added "theatres" and "anime" routes to __init__.py
+==============================================================

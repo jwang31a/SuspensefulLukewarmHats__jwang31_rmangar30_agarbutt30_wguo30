@@ -40,9 +40,13 @@ def landing():
 def homepage():
     return render_template("homepage.html")
 
+@app.route("/theatres", methods = ["GET", "POST"])
+def theatres():
+    return render_template("theatres.html")
+
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
-    return render_template("anime.html")
+    return render_template("anime.html")    
 
 #can be changed and added to /homepage as form button
 #also no way to access this yet
