@@ -1,6 +1,7 @@
 
 from flask import Flask, session, render_template, request, redirect
 import sqlite3, auth, os
+import json, urllib.request
 
 #creates flask app
 app = Flask(__name__)
@@ -25,13 +26,14 @@ def landing():
         # deals with login and register buttons being clicked
         if request.form.get("register") == "register":
             auth.add_accounts(request.form["username_register"], request.form["password_register"])
+            return render_template("login.html", color = "success", message = "Successfully registered")
         if request.form.get("login") == "login":
             truth = auth.get_accounts(request.form["username_login"], request.form["password_login"])
             if truth:
                 session['username'] = request.form["username_login"]
                 return redirect("/homepage", code=307)
             else:
-                return "Incorrect Username and/or Password"
+                return render_template('login.html', color = "danger", message = "Incorrect Username and/or Password")
 
     return render_template("login.html")
 

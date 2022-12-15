@@ -22,15 +22,15 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #b9e1ff;">
-        <a class="navbar-brand" href="/homepage">Navbar</a>
+    <nav class="navbar navbar-expand-lg p-3" style="background-color: #b9e1ff;">
+        <a class="navbar-brand" href="/homepage">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/theatres"> Theatres</a>
                 </li>
@@ -41,46 +41,47 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/anime">Anime</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
             </ul>
-            <!-- Search Bar-->
-            <form class="row row-cols-lg-auto g-3">
-                <div class="col-sm-2">
-                    <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search...." />
-                </div>
-                <div class="col-sm-2">
-                    <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
-                </div>
-            </form>
         </div>
-
         <!-- Something like google logout ish-->
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Profile</button>
-            <div class="dropdown-menu dropdown-menu-right p-3">
-                <h2 style="text-align: center;"> Welcome {{username}}</h2>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <br>
-                <div style="text-align: center;">
-                    <form method="POST" action="/logout">
-                        <button type="submit" class="btn btn-danger"> Logout</button>
-                    </form>
+        <ul class="nav navbar-nav navbar-right">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</button>
+                <div class="dropdown-menu dropdown-menu-right p-3">
+                    <h2 style="text-align: center;"> Welcome {{username}}</h2>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <br>
+                    <div style="text-align: center;">
+                        <form method="POST" action="/logout">
+                            <button type="submit" class="btn btn-danger"> Logout</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ul>
     </nav>
-
     <h1> Welcome to the anime page!</h1>
+
+
+    <!-- user search bar inputs-->
+    <form class="row row-cols-lg-auto g-3">
+        <div class="col-sm-2">
+            <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search...." />
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
+        </div>
+    </form>
+    </div>
+
     <!-- row of cards for different titles?-->
     <h3> Best selling movies </h3>
-    <div class="row row-cols-1 row-cols-md-4">
+    <div class="row row-cols-1 row-cols-md-4 p-4">
         <div class="col mb-4">
             <div class="card">
                 <img src="https://th.bing.com/th/id/R.8ed804fca6d9258eacb78e272fec81ee?rik=LQmzsWYtzi6k3g&pid=ImgRaw&r=0"
@@ -126,7 +127,7 @@
 
 
     <h3> Newest movies </h3>
-    <div class="row row-cols-1 row-cols-md-4">
+    <div class="row row-cols-1 row-cols-md-4 p-4">
         <div class="col mb-4">
             <div class="card">
                 <img src="https://th.bing.com/th/id/R.8ed804fca6d9258eacb78e272fec81ee?rik=LQmzsWYtzi6k3g&pid=ImgRaw&r=0"
