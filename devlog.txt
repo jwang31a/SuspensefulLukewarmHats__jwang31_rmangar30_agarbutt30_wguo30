@@ -138,3 +138,10 @@ williamG-- 2022-12-14 23:50
 * reworked navbar so profile button stays on the right when screen minimizes
 * attempting to create user search query for the different pages
 ==============================================================
+
+RavindraM -- 2022-12-15 13:03
+--------------------------------------------------------------
+* completed auth.py, storing user account information
+* completed users.py, storing user preferences information
+* created checks to prevent errors in accounts.db and users.db 
+==============================================================
