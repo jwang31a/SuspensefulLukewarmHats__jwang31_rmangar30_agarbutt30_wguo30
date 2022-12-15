@@ -1,6 +1,7 @@
 
 from flask import Flask, session, render_template, request, redirect
 import sqlite3, auth, os
+import json, urllib.request
 
 #creates flask app
 app = Flask(__name__)
@@ -46,7 +47,23 @@ def theatres():
 
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
-    return render_template("anime.html")    
+    return render_template("anime.html")
+
+@app.route("/search", methods = ["GET", "POST"])
+def search():
+    query =  request.form.get("query")
+
+    #read key value from key_nasa.txt
+    key = open("app/keys/key_omdapi.txt", "r").read()
+    url = f"https://www.omdbapi.com/?apikey={key}&t={query}"
+
+    # opens url as a string or Request object
+    data = urllib.request.urlopen(url)
+    dict = json.load(data)
+
+    return(dict)
+
+
 
 #can be changed and added to /homepage as form button
 #also no way to access this yet

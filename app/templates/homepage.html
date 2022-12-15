@@ -27,7 +27,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -45,9 +45,9 @@
           </li>
         </ul>
         <!-- Search Bar-->
-        <form class="row row-cols-lg-auto g-3">
+        <form action="/search" class="row row-cols-lg-auto g-3">
           <div class="col-sm-2">
-            <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search...." />
+            <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Search...." />
           </div>
           <div class="col-sm-2">
             <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
@@ -59,13 +59,13 @@
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</button>
         <div class="dropdown-menu dropdown-menu-right p-3">
-          <h2 style = "text-align: center;"> Welcome {{username}}</h2>   
+          <h2 style = "text-align: center;"> Welcome {{username}}</h2>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <br>
           <div style = "text-align: center;">
-            <form method = "POST" action = "/logout"> 
+            <form method = "POST" action = "/logout">
               <button type = "submit" class = "btn btn-danger"> Logout</button>
             </form>
           </div>
