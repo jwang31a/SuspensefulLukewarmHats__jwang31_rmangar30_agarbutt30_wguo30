@@ -131,3 +131,10 @@ AdenG -- 2022-12-14 12:56
 --------------------------------------------------------------
 * Added "theatres" and "anime" routes to __init__.py
 ==============================================================
+
+williamG-- 2022-12-14 23:50
+--------------------------------------------------------------
+* completed logout function 
+* reworked navbar so profile button stays on the right when screen minimizes
+* attempting to create user search query for the different pages
+==============================================================
