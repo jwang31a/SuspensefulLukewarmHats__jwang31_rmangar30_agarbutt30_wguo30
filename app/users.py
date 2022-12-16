@@ -55,7 +55,10 @@ def get_accounts(username):
     for account in response:
         if account[0] == username:
             #print(f"GET {account[1]}")
-            return account[1].split("_")
+            res = account[1].split("_")
+            if res == ['']:
+              return []
+            return res
     return []
 
 #testing if these functions work
