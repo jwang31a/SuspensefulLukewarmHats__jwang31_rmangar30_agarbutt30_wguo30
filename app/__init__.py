@@ -50,11 +50,11 @@ def anime():
 
 @app.route("/search", methods = ["GET", "POST"])
 def search():
-    query =  request.form.get("query")
-
+    q =  request.form.get("query")
+    
     #read key value from key_nasa.txt
-    key = open("app/keys/key_omdapi.txt", "r").read()
-    url = f"https://www.omdbapi.com/?apikey={key}&t={query}"
+    key = open("/Users/aden/Downloads/p01/app/keys/key_omdapi.txt", "r").read()
+    url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
 
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
