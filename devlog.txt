@@ -145,3 +145,10 @@ RavindraM -- 2022-12-15 13:03
 * completed users.py, storing user preferences information
 * created checks to prevent errors in accounts.db and users.db 
 ==============================================================
+
+JunHongW -- 2022-12-15 21:15
+--------------------------------------------------------------
+* added testing directory in app to store api tests
+* got basic web app with omdb api to work
+* to represent spaces in url, use +
+==============================================================
