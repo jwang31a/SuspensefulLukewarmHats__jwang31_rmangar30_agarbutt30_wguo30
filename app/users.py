@@ -25,6 +25,7 @@ def add_accounts(username, movies):
   #db = sqlite3.connect(DB_FILE, check_same_thread=False)
   #c = db.cursor()
   current = get_accounts(username)
+  #current.remove('')
   for item in movies:
     if item in current:
       continue
@@ -37,6 +38,8 @@ def add_accounts(username, movies):
 def remove_accounts(username, movies):
   current = get_accounts(username)
   for item in movies:
+    if item not in current:
+      continue
     current.remove(item)
   #print(f"REMOVE: {current}")
   c.execute("UPDATE accounts SET movies = ? WHERE username = ?", ["_".join(current), str(username)])

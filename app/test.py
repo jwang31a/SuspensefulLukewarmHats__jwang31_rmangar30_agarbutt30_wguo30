@@ -1,9 +1,6 @@
 import users
 
 users.verify_accounts()
-users.add_accounts("What", ["Bruh","Bruh2","Bruh3", "Bruh4"])
-print(users.get_accounts("What"))
-users.add_accounts("What", ["Bruh5"])
-print(users.get_accounts("What"))
-users.remove_accounts("What", ["Bruh5"])
-print(users.get_accounts("What"))
+users.add_accounts("Avinda", ["Your Name", "A Silent Voice", "Demon Slayer"])
+users.remove_accounts("Avinda", ["Your Name", "Demon Slayer", "A Silent Voice"])
+print(users.get_accounts("Avinda"))
