@@ -22,7 +22,6 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <!-- Nav bar -->
-<<<<<<< HEAD
   <nav class="navbar navbar-expand-lg p-3" style="background-color: #b9e1ff;">
     <a class="navbar-brand" href="/homepage">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -42,34 +41,6 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/anime">Anime</a>
             <a class="dropdown-item" href="#">Something else here</a>
-=======
-  <nav class="navbar navbar-expand-lg navbar-light p-3" style = "background-color: #b9e1ff;">
-      <a class="navbar-brand" href="/homepage">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/theatres"> Theatres</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Genres
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/anime">Anime</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <!-- Search Bar-->
-        <form action="/search" class="row row-cols-lg-auto g-3">
-          <div class="col-sm-2">
-            <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Search...." />
->>>>>>> bbc2b3b6f1dbded88326ab1a889616feb2d99545
           </div>
         </li>
       </ul>
@@ -80,23 +51,13 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Profile</button>
         <div class="dropdown-menu dropdown-menu-right p-3">
-<<<<<<< HEAD
           <h2 style="text-align: center;"> Welcome {{username}}</h2>
-=======
-          <h2 style = "text-align: center;"> Welcome {{username}}</h2>
->>>>>>> bbc2b3b6f1dbded88326ab1a889616feb2d99545
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Action</a>
           <br>
-<<<<<<< HEAD
           <div style="text-align: center;">
             <form method="POST" action="/logout">
               <button type="submit" class="btn btn-danger"> Logout</button>
-=======
-          <div style = "text-align: center;">
-            <form method = "POST" action = "/logout">
-              <button type = "submit" class = "btn btn-danger"> Logout</button>
->>>>>>> bbc2b3b6f1dbded88326ab1a889616feb2d99545
             </form>
           </div>
         </div>
@@ -108,26 +69,36 @@
 
   <h1> This is the home page! Enjoy your stay!</h1>
 
-  <!-- user search bar inputs-->
-  <form class="row row-cols-lg-auto g-3">
+  <div class = "container" style = "background-color: aquamarine;">
+    <!-- user search bar inputs-->
+  <form class="row row-cols-lg-auto p-3">
     <div class="col-sm-2">
-      <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search...." />
+      <input type="search" name = "query" class="form-control mr-sm-2" id="search" placeholder="Movie title" />
     </div>
     <div class="col-sm-2">
       <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
     </div>
   </form>
+  <!-- Randomize button-->
+  <div class="wrap">
+    <button><strong>Give me a recommendation!</strong></button>
   </div>
 
 
   <!-- card that shows the stuff-->
-  <div class="card">
+  <div class="card text-center">
     <img src="{{image}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">{{description}}</p>
+        <h5 class="card-title">Hi {{title}}</h5>
+        <p class="card-text"> Yo {{description}}</p>
     </div>
-</div>
+  </div>
+
+  </div>
+
+  
+  </div>
+  
 </body>
 
 </html>
