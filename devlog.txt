@@ -152,3 +152,9 @@ JunHongW -- 2022-12-15 21:15
 * got basic web app with omdb api to work
 * to represent spaces in url, use +
 ==============================================================
+
+RavindraM -- 2022-12-16 13:03
+--------------------------------------------------------------
+* fixed spacing issue in the URL for Search by replacing spaces with '+'
+* fixed empty list issue when removing all items in a user's account in users.py
+==============================================================
