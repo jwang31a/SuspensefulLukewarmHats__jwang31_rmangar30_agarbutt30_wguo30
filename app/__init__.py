@@ -61,7 +61,7 @@ def search():
     data = urllib.request.urlopen(url)
     dict = json.load(data)
 
-    return(dict)
+    return(render_template('homepage.html', title = dict['Title'],image=dict['Poster'], description=dict['Plot']))
 
 
 
