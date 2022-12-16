@@ -53,8 +53,8 @@ def anime():
 def search():
     q =  request.form.get("query")
     
-    #read key value from key_nasa.txt
-    key = open("/Users/aden/Downloads/p01/app/keys/key_omdapi.txt", "r").read()
+    #read key values
+    key = open("../app/keys/key_omdapi.txt", "r").read()
     url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
 
     # opens url as a string or Request object
