@@ -130,11 +130,12 @@ AdenG -- 2022-12-14 01:24
 AdenG -- 2022-12-14 12:56
 --------------------------------------------------------------
 * Added "theatres" and "anime" routes to __init__.py
+* Added homepage search functionality
 ==============================================================
 
 williamG-- 2022-12-14 23:50
 --------------------------------------------------------------
-* completed logout function 
+* completed logout function
 * reworked navbar so profile button stays on the right when screen minimizes
 * attempting to create user search query for the different pages
 ==============================================================
@@ -143,7 +144,7 @@ RavindraM -- 2022-12-15 13:03
 --------------------------------------------------------------
 * completed auth.py, storing user account information
 * completed users.py, storing user preferences information
-* created checks to prevent errors in accounts.db and users.db 
+* created checks to prevent errors in accounts.db and users.db
 ==============================================================
 
 JunHongW -- 2022-12-15 21:15
@@ -157,4 +158,10 @@ RavindraM -- 2022-12-16 13:03
 --------------------------------------------------------------
 * fixed spacing issue in the URL for Search by replacing spaces with '+'
 * fixed empty list issue when removing all items in a user's account in users.py
+==============================================================
+
+AdenG -- 2022-12-18 1:45
+--------------------------------------------------------------
+* Added theatres search functionality
+* Added comments to code for clarity
 ==============================================================

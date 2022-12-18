@@ -27,7 +27,10 @@ def landing():
             auth.add_accounts(request.form["username_register"], request.form["password_register"])
             return render_template("login.html", color = "success", message = "Successfully registered")
         if request.form.get("login") == "login":
+
             truth = auth.get_accounts(request.form["username_login"], request.form["password_login"])
+
+            #verifies login info
             if truth:
                 session['username'] = request.form["username_login"]
                 return redirect("/homepage", code=307)
@@ -41,23 +44,23 @@ def landing():
 def homepage():
     return render_template("homepage.html")
 
+
 @app.route("/theatres", methods = ["GET", "POST"])
 def theatres():
     return render_template("theatres.html")
+
 
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
     return render_template("anime.html")
 
-@app.route("/search", methods = ["GET", "POST"])
-def search():
-    q =  request.form.get("query")
-    
-    #read key value from key_nasa.txt
-    key = open("keys/key_omdapi.txt", "r").read()
 
-    #read key values
-    key = open("../app/keys/key_omdapi.txt", "r").read()
+@app.route("/homepage/search", methods = ["GET", "POST"])
+def homepage_search():
+    q =  request.form.get("query")
+
+    #read apikey from key_nasa.txt
+    key = open("keys/key_omdapi.txt", "r").read()
     url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
     url = url.replace(" ", "+")
 
@@ -65,12 +68,31 @@ def search():
     data = urllib.request.urlopen(url)
     dict = json.load(data)
 
+    #need to handle if no search results are returned from api call
+
     return(render_template('homepage.html', title = dict['Title'],image=dict['Poster'], description=dict['Plot']))
 
 
+@app.route("/theatres/search", methods = ["GET", "POST"])
+def theatres_search():
+    q = request.form.get("query")
 
-#can be changed and added to /homepage as form button
-#also no way to access this yet
+    #read apikey from key_serpapi.txt
+    key = open("keys/key_serpapi.txt", "r").read()
+    url = f"https://serpapi.com/search?engine=google&api_key={key}&q={q}+showtimes"
+    url = url.replace(" ", "+")
+
+    # opens url as a string or Request object
+    data = urllib.request.urlopen(url)
+    dict = json.load(data)
+
+    # be weary, not all movies return showtimes data! if a dict["showtimes"]
+    # returns a KeyError that means no showtimes results were found for that
+    # movie, so just say "no upcoming showtimes" or something like that
+
+    return dict["showtimes"]
+
+
 @app.route("/logout", methods = ['POST'])
 def logout():
     if "username" in session:
@@ -81,6 +103,7 @@ def logout():
     #db.close()
     #dbstory.close()
     return redirect("/")#goes home
+
 
 if __name__ == "__main__":
     app.debug = True
