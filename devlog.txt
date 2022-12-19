@@ -194,4 +194,5 @@ williamG -- 2022-12-18 23:51
 * anime page revamp with same card concept as homepage
 * added vertical nav pills for theatres page to display movie showtime dates
 * made all nav bar sticky-top
+* different background images for each respective page
 ==============================================================
