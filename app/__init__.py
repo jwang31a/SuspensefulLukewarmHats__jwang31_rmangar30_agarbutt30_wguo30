@@ -20,7 +20,6 @@ def landing():
     #if user is already logged in
     if "username" in session:
         return redirect("/homepage", code=307)
-
     if request.method == "POST":
         # deals with login and register buttons being clicked
         if request.form.get("register") == "register":
@@ -61,11 +60,14 @@ def search():
     url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
     url = url.replace(" ", "+")
 
+    longplot = f"https://www.omdbapi.com/?apikey={key}&t={q}&plot=full"
+    longplot = longplot.replace(" ", "+")
+
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
 
-    return(render_template('homepage.html', title = dict['Title'],image=dict['Poster'], description=dict['Plot']))
+    return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))
 
 
 

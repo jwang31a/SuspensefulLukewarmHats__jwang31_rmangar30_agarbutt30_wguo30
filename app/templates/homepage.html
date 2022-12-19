@@ -10,7 +10,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="home">
   <!-- JS scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -40,7 +40,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/anime">Anime</a>
-            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
       </ul>
@@ -51,10 +50,9 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Profile</button>
         <div class="dropdown-menu dropdown-menu-right p-3">
-          <h2 style="text-align: center;"> Welcome {{username}}</h2>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Action</a>
-          <br>
+          <h2 style="text-align: center;"> Welcome! </h2>
+          <div class="dropdown-divider">
+          </div>
           <div style="text-align: center;">
             <form method="POST" action="/logout">
               <button type="submit" class="btn btn-danger"> Logout</button>
@@ -69,36 +67,71 @@
 
   <h1> This is the home page! Enjoy your stay!</h1>
 
-  <div class = "container" style = "background-color: aquamarine;">
-    <!-- user search bar inputs-->
-  <form class="row row-cols-lg-auto p-3" action = "/search" method = "POST">
-    <div class="col-sm-2">
-      <input type="search" name = "query" class="form-control mr-sm-2" id="search" placeholder="Movie title" />
+  <!-- user search bar inputs-->
+  <div class="container">
+    <form class="row row-cols-2 p-2" action="/search" method="POST">
+      <div class="col-10">
+        <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Movie title" />
+      </div>
+      <div class="col-2">
+        <button type="submit" class="btn btn-success">Search</button>
+      </div>
+    </form>
+
+    <!-- Randomize button-->
+    <div style = "text-align: center;">
+      <button class="btn-hover color-1" data-toggle="modal" data-target="#random-movie-detail"><strong>GIVE ME A
+        RECOMENDATION!</strong></button>
     </div>
-    <div class="col-sm-2">
-      <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
+    
+    <!-- Random Movie Modal 
+        <div class="modal fade" id="random-movie-detail" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: rgb(202, 224, 244);">
+          <div class="modal-header">
+            <h3 class="modal-title">Title: {{title}}</h3>
+          </div>
+          <div class="modal-body">
+            <div class="card border-0" style="background-color: rgb(202, 224, 244);">
+              <img src="{{image}}" class="card-img-top">
+            </div>
+          </div>
+          <div class="modal-footer">
+            {{descriptionshort}}
+          </div>
+        </div>
+      </div>
     </div>
-  </form>
-  <!-- Randomize button-->
-  <div class="wrap">
-    <button><strong>Give me a recommendation!</strong></button>
-  </div>
+    -->
 
-
-  <!-- card that shows the stuff-->
-  <div class="card text-center">
-    <img src="{{image}}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text"> {{description}}</p>
+    <!-- card that shows the stuff-->
+    <div class = "wrapper">
+      <div class="homecard">
+        <img src="{{image}}" class="img-fluid w-100">
+        <div class="info">
+          <h1>{{title}}</h1>
+          <p> {{descriptionshort}}</p>
+          <button class="btn" data-toggle="modal" data-target="#long-plot"><strong>Read more</strong></button>
+        </div>
+      </div>
     </div>
-  </div>
 
+        <!-- long plot of Movie Modal -->
+        <div class="modal fade" id="long-plot" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: rgb(202, 224, 244);">
+              <div class="modal-body">
+                <div class="card border-0" style="background-color: rgb(202, 224, 244);">
+                  <img src="{{image}}" class="card-img-top">
+                </div>
+              </div>
+              <div class="modal-footer">
+                {{descriptionlong}}
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
-
-  
-  </div>
-  
 </body>
 
 </html>
