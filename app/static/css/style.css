@@ -19,20 +19,20 @@ img {
     margin: 0 auto;
 }
 
-h1, .card-title {
+h1 {
     text-align: center;
 }
+
+h3{
+    color:rgb(55, 220, 215)
+}
+
 
 .navbar .dropdown-menu-right {
     right: 0; 
     left: auto; 
 }
 
-.card-img-top{
-    width: 100%;
-    height: 50vh;
-    object-fit: contain;
-}
 
 .btn-hover {
     width: 450px;
@@ -69,6 +69,18 @@ h1, .card-title {
     background-size: cover;
 }
 
+.theatre{
+    background-image: url('https://media.bizj.us/view/img/10243155/showplace-icon-yards-1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.anime{
+    background-image: url('https://wallpapercave.com/wp/wp1951626.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .wrapper{
     display:flex;
     width: 100%;
@@ -78,7 +90,7 @@ h1, .card-title {
 
 .homecard{
     width:45vh;
-    height:60vh;
+    height:55vh;
     padding: 2rem 1rem;
     background:#fff;
     position:relative;
@@ -103,6 +115,10 @@ h1, .card-title {
     z-index: 2;
     transition: 0.5s all;
     opacity: 0;
+}
+
+.blue:before{
+    background: linear-gradient(rgba(0, 9, 176, 0.5),rgb(61, 185, 201));
 }
 
 .homecard:hover:before{

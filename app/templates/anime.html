@@ -10,7 +10,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body class = "anime">
     <!-- JS scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -22,7 +22,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg p-3" style="background-color: #b9e1ff;">
+    <nav class="navbar navbar-expand-lg p-3 sticky-top" style="background-color: #b9e1ff;">
         <a class="navbar-brand" href="/homepage">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/anime">Anime</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
             </ul>
@@ -65,63 +64,66 @@
             </div>
         </ul>
     </nav>
-    <h1> Welcome to the anime page!</h1>
+    <h1 style="color:azure"> Welcome to the anime page!</h1>
 
 
     <!-- user search bar inputs-->
-    <form class="row row-cols-lg-auto g-3">
-        <div class="col-sm-2">
-            <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search...." />
-        </div>
-        <div class="col-sm-2">
-            <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
-        </div>
-    </form>
-    </div>
+    <div class="container">
+        <form class="row row-cols-2 p-2" action="/anime/search" method="POST">
+          <div class="col-10">
+            <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Movie title">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-success">Search</button>
+          </div>
+        </form>
 
     <!-- row of cards for different titles?-->
     <h3> Best selling movies </h3>
     <div class="row row-cols-1 row-cols-md-4 p-4">
         <div class="col mb-4">
-            <div class="card">
-                <img src="https://th.bing.com/th/id/R.8ed804fca6d9258eacb78e272fec81ee?rik=LQmzsWYtzi6k3g&pid=ImgRaw&r=0"
-                    class="card-img-top" alt="...">
-                <div class="card-footer">
-                    <h5 class="card-title">Movie title</h5>
-                    <p class="card-text">Insert description pulled from the api</p>
+            <div class = "wrapper">
+                <div class="homecard blue">
+                  <img src="https://th.bing.com/th/id/R.8ed804fca6d9258eacb78e272fec81ee?rik=LQmzsWYtzi6k3g&pid=ImgRaw&r=0" class="img-fluid w-100">
+                  <div class="info">
+                    <h1>Movie title</h1>
+                    <p> Insert description pulled from api</p>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
         <div class="col mb-4">
-            <div class="card">
-                <img src="https://jw-webmagazine.com/wp-content/uploads/2020/09/Weathering-with-You.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-footer">
-                    <h5 class="card-title">Movie title</h5>
-                    <p class="card-text">Insert description pulled form the api</p>
+            <div class = "wrapper">
+                <div class="homecard blue">
+                  <img src="https://jw-webmagazine.com/wp-content/uploads/2020/09/Weathering-with-You.jpg" class="img-fluid w-100">
+                  <div class="info">
+                    <h1>Movie title</h1>
+                    <p> Insert description pulled from api</p>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
         <div class="col mb-4">
-            <div class="card">
-                <img src="https://external-preview.redd.it/AOZJ-PAWZWFYdRA-3wjYXz3PQEF7nqRG_WcbMpERMKI.jpg?auto=webp&s=9d32ff8edfe72c56ef99bca189637958e8c07583"
-                    class="card-img-top" alt="...">
-                <div class="card-footer">
-                    <h5 class="card-title">Movie title</h5>
-                    <p class="card-text">Api description</p>
+            <div class = "wrapper">
+                <div class="homecard blue">
+                  <img src="https://external-preview.redd.it/AOZJ-PAWZWFYdRA-3wjYXz3PQEF7nqRG_WcbMpERMKI.jpg?auto=webp&s=9d32ff8edfe72c56ef99bca189637958e8c07583" class="img-fluid w-100">
+                  <div class="info">
+                    <h1>Movie title</h1>
+                    <p> Insert description pulled from api</p>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
         <div class="col mb-4">
-            <div class="card">
-                <img src="https://th.bing.com/th/id/OIP.jx8KxJdKRWa9BnkOJFHtegHaJ4?pid=ImgDet&rs=1" class="card-img-top"
-                    alt="...">
-                <div class="card-footer">
-                    <h5 class="card-title">Movie title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
+            <div class = "wrapper">
+                <div class="homecard blue">
+                  <img src="https://th.bing.com/th/id/OIP.jx8KxJdKRWa9BnkOJFHtegHaJ4?pid=ImgDet&rs=1" class="img-fluid w-100">
+                  <div class="info">
+                    <h1>Movie title</h1>
+                    <p> Insert description pulled from api</p>
+                  </div>
                 </div>
-            </div>
+              </div>
         </div>
     </div>
 

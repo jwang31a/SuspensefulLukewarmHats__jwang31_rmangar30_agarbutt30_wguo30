@@ -59,7 +59,7 @@ def homepage_search():
     q =  request.form.get("query")
 
     #read apikey from key_nasa.txt
-    key = open("keys/key_omdapi.txt", "r").read()
+    key = open("../app/keys/key_omdapi.txt", "r").read()
     url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
     url = url.replace(" ", "+")
 
@@ -69,6 +69,7 @@ def homepage_search():
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
+    print(dict)
 
     #need to handle if no search results are returned from api call
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))

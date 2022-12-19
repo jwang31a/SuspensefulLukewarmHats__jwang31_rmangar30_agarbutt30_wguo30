@@ -10,7 +10,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body background = "https://th.bing.com/th/id/R.4274da52ce015eba856e992f52d34f20?rik=7BYmJ38D9s8sQQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fuyeqTRM.jpg&ehk=pSmH9h8RgZnQ6a0gZVu2gv2iTzI%2fS9ujuBjqqziGfss%3d&risl=&pid=ImgRaw&r=0">
+<body class = 'theatre'>
   <!-- JS scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -22,7 +22,7 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <!-- Nav bar -->
-  <nav class="navbar navbar-expand-lg p-3" style="background-color: #b9e1ff;">
+  <nav class="navbar navbar-expand-lg p-3 sticky-top" style="background-color: #b9e1ff;">
     <a class="navbar-brand" href="/homepage">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/anime">Anime</a>
-            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
       </ul>
@@ -66,8 +65,51 @@
   </nav>
 
 
-  <h1> Welcome to the Theatre page!</h1>
+  <h1 style = "color: white;"> Welcome to the Theatre page!</h1>
+    <!-- user search bar inputs-->
+    <div class="container">
+      <form class="row row-cols-2 p-2" action="/theatres/search" method="POST">
+        <div class="col-10">
+          <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Movie title">
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-success">Search</button>
+        </div>
+      </form>
 
+    <!-- table that shows cinema times-->
+    <div class = "container p-3" style="background-color: white; opacity:0.85;">
+      <div class="row">
+        <div class="col-2">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+        <!-- stuff inside each nav-pill-->
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+    </div>
 </body>
 
 </html>
