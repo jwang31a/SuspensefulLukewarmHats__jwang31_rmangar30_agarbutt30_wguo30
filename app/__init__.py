@@ -54,6 +54,11 @@ def theatres():
 
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
+
+    key = 'YaI3KDpNull6LCiQp3skU1ybBUQCEUD0bC6daLAW'
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5')
+
     return render_template("anime.html")
 
 
