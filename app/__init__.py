@@ -141,8 +141,14 @@ def logout():
 def handle_key(e):
     return redirect("/homepage", code=307)
 
+#if user trying to access route that doesn't exist
 @app.errorhandler(404)
 def not_found(e):
+    return redirect("/homepage", code=307)
+
+#if user trying to search for no title (also to make sure the random button doesn't break everything)
+@app.errorhandler(NameError)
+def name_error(e):
     return redirect("/homepage", code=307)
 
 if __name__ == "__main__":
