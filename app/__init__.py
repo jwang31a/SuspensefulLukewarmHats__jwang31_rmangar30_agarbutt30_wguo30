@@ -4,7 +4,7 @@ import json, urllib.request
 
 #creates flask app
 app = Flask(__name__)
-app.secret_key = "hello" #os.urandom(32)  #set up the session with a secret key
+app.secret_key = os.urandom(32)  # set up the session with a secret key
 app.config['s'] = app.secret_key
 
 #calls function from auth.py that sets up acc database
@@ -39,9 +39,11 @@ def landing():
     return render_template("login.html")
 
 
+
 @app.route("/homepage", methods = ["GET", "POST"])
 def homepage():
     return render_template("homepage.html")
+
 
 
 @app.route("/theatres", methods = ["GET", "POST"])
@@ -49,9 +51,11 @@ def theatres():
     return render_template("theatres.html")
 
 
+
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
     return render_template("anime.html")
+
 
 
 @app.route("/homepage/search", methods = ["GET", "POST"])
@@ -75,6 +79,7 @@ def homepage_search():
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))
 
 
+
 @app.route("/theatres/search", methods = ["GET", "POST"])
 def theatres_search():
     q = request.form.get("query")
@@ -82,7 +87,7 @@ def theatres_search():
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
-    url = f"https://serpapi.com/search?engine=google&api_key={key}&location=New+York+City,+New+York,+United+States&q={q}+showtimes"
+    url = f"https://serpapi.com/search?engine=google&api_key={key}&location={loc},+United+States&q={q}+showtimes"
     url = url.replace(" ", "+")
 
     # opens url as a string or Request object
@@ -95,6 +100,7 @@ def theatres_search():
     data = dict['showtimes']
 
     return data
+
 
 
 @app.route("/homepage/randomize", methods = ["GET", "POST"])
@@ -127,6 +133,7 @@ def logout():
     #db.close()
     #dbstory.close()
     return redirect("/")#goes home
+
 
 #if user tries to search for a movie that doesn't exist, there won't be any information, so we can't access the dictionary
 #this handles the nonexistent key
