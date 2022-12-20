@@ -106,6 +106,15 @@ def logout():
     #dbstory.close()
     return redirect("/")#goes home
 
+#if user tries to search for a movie that doesn't exist, there won't be any information, so we can't access the dictionary
+#this handles the nonexistent key
+@app.errorhandler(KeyError)
+def handle_key(e):
+    return redirect("/homepage", code=307)
+
+@app.errorhandler(404)
+def not_found(e):
+    return redirect("/homepage", code=307)
 
 if __name__ == "__main__":
     app.debug = True
