@@ -196,3 +196,8 @@ williamG -- 2022-12-18 23:51
 * made all nav bar sticky-top
 * different background images for each respective page
 ==============================================================
+
+JunHongW -- 2022-12-19 21:15
+--------------------------------------------------------------
+* added error handling for movie not existing and url not existing, now redirects back to homepage
+==============================================================
