@@ -88,11 +88,10 @@ def homepage_search():
 @app.route("/theatres/search", methods = ["GET", "POST"])
 def theatres_search():
     q = request.form.get("query")
-    loc = request.form.get("location")
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
-    url = f"https://serpapi.com/search?engine=google&api_key={key}&location={loc},+United+States&q={q}+showtimes"
+    url = f"https://serpapi.com/search?engine=google&location=New+York,+United+States&api_key={key}&q={q}+showtimes"
     url = url.replace(" ", "+")
 
     # opens url as a string or Request object
