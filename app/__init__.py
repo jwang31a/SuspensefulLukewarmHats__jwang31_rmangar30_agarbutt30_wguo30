@@ -91,8 +91,9 @@ def theatres_search():
     # be weary, not all movies return showtimes data! if a dict["showtimes"]
     # returns a KeyError that means no showtimes results were found for that
     # movie, so just say "no upcoming showtimes" or something like that
+    data = dict['showtimes']
 
-    return dict["showtimes"]
+    return data
 
 
 @app.route("/logout", methods = ['POST'])
