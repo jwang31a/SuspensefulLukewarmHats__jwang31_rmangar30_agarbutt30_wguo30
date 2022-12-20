@@ -92,8 +92,9 @@ def theatres_search():
     # be weary, not all movies return showtimes data! if a dict["showtimes"]
     # returns a KeyError that means no showtimes results were found for that
     # movie, so just say "no upcoming showtimes" or something like that
+    data = dict['showtimes']
 
-    return dict["showtimes"]
+    return data
 
 
 @app.route("/homepage/randomize", methods = ["GET", "POST"])
@@ -127,6 +128,15 @@ def logout():
     #dbstory.close()
     return redirect("/")#goes home
 
+#if user tries to search for a movie that doesn't exist, there won't be any information, so we can't access the dictionary
+#this handles the nonexistent key
+@app.errorhandler(KeyError)
+def handle_key(e):
+    return redirect("/homepage", code=307)
+
+@app.errorhandler(404)
+def not_found(e):
+    return redirect("/homepage", code=307)
 
 if __name__ == "__main__":
     app.debug = True

@@ -177,7 +177,6 @@ williamG -- 2022-12-16 13:21
 * error and success messages during login and different colors that go along with it
 ==============================================================
 
-
 AdenG -- 2022-12-18 1:45
 --------------------------------------------------------------
 * Added theatres search functionality
@@ -195,4 +194,15 @@ williamG -- 2022-12-18 23:51
 * added vertical nav pills for theatres page to display movie showtime dates
 * made all nav bar sticky-top
 * different background images for each respective page
+==============================================================
+
+JunHongW -- 2022-12-19 21:15
+--------------------------------------------------------------
+* added error handling for movie not existing and url not existing, now redirects back to homepage
+==============================================================
+
+williamG -- 2022-12-19 22:59
+--------------------------------------------------------------
+* added accordian in theatres to show the movie theatre locations and the showtimes
+* trying to use jinja for loop to make life easier
 ==============================================================
