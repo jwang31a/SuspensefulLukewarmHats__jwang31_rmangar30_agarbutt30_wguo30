@@ -78,10 +78,11 @@ def homepage_search():
 @app.route("/theatres/search", methods = ["GET", "POST"])
 def theatres_search():
     q = request.form.get("query")
+    loc = request.form.get("location")
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
-    url = f"https://serpapi.com/search?engine=google&api_key={key}&q={q}+showtimes"
+    url = f"https://serpapi.com/search?engine=google&api_key={key}&location=New+York+City,+New+York,+United+States&q={q}+showtimes"
     url = url.replace(" ", "+")
 
     # opens url as a string or Request object
@@ -93,6 +94,26 @@ def theatres_search():
     # movie, so just say "no upcoming showtimes" or something like that
 
     return dict["showtimes"]
+
+
+@app.route("/homepage/randomize", methods = ["GET", "POST"])
+def homepage_randomize():
+    #read apikey from key_nasa.txt
+    key = open("../app/keys/key_omdapi.txt", "r").read()
+    url = f"https://www.omdbapi.com/?apikey={key}&t={q}"
+    url = url.replace(" ", "+")
+
+    longplot = f"https://www.omdbapi.com/?apikey={key}&t={q}&plot=full"
+    longplot = longplot.replace(" ", "+")
+
+    # opens url as a string or Request object
+    data = urllib.request.urlopen(url)
+    dict = json.load(data)
+    print(dict)
+
+    #need to handle if no search results are returned from api call
+    return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))
+
 
 
 @app.route("/logout", methods = ['POST'])
