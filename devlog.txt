@@ -206,3 +206,10 @@ williamG -- 2022-12-19 22:59
 * added accordian in theatres to show the movie theatre locations and the showtimes
 * trying to use jinja for loop to make life easier
 ==============================================================
+
+JunHongW -- 2022-12-20 20:45
+--------------------------------------------------------------
+* put watchmode key into txt file
+* imported requests
+* sent new set of keys to make sure demo didn't break
+==============================================================

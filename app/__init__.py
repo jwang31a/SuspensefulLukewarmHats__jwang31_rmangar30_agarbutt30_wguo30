@@ -1,5 +1,5 @@
 from flask import Flask, session, render_template, request, redirect
-import sqlite3, auth, os
+import sqlite3, auth, os, requests
 import json, urllib.request
 
 #creates flask app
@@ -54,6 +54,16 @@ def theatres():
 
 @app.route("/anime", methods = ["GET", "POST"])
 def anime():
+    key = open("../app/keys/key_anime.txt", "r").read()
+
+    #ANIME
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
+    
+    #COMEDY
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
+
     return render_template("anime.html")
 
 
@@ -83,7 +93,6 @@ def homepage_search():
 @app.route("/theatres/search", methods = ["GET", "POST"])
 def theatres_search():
     q = request.form.get("query")
-    loc = request.form.get("location")
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
@@ -152,15 +161,20 @@ def logout():
     #dbstory.close()
     return redirect("/")#goes home
 
-
 #if user tries to search for a movie that doesn't exist, there won't be any information, so we can't access the dictionary
 #this handles the nonexistent key
 @app.errorhandler(KeyError)
 def handle_key(e):
     return redirect("/homepage", code=307)
 
+#if user trying to access route that doesn't exist
 @app.errorhandler(404)
 def not_found(e):
+    return redirect("/homepage", code=307)
+
+#if user trying to search for no title (also to make sure the random button doesn't break everything)
+@app.errorhandler(NameError)
+def name_error(e):
     return redirect("/homepage", code=307)
 
 if __name__ == "__main__":
