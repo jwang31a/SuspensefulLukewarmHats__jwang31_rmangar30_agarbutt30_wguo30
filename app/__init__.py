@@ -57,16 +57,16 @@ def anime():
     key = open("../app/keys/key_anime.txt", "r").read()
 
     # Comment due to api limit
-    
-    #ANIME
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
-    
-    #COMEDY
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
 
-    
+    #ANIME
+    # response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
+    # response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
+    #
+    # COMEDY
+    # response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
+    # response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
+
+
     return render_template("anime.html")
 
 
@@ -86,7 +86,7 @@ def homepage_search():
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
-    print(dict)
+    #print(dict)
 
     #need to handle if no search results are returned from api call
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot'], status = 'using'))
@@ -125,10 +125,10 @@ def theatres_search():
             for i in info['showing']:
                 time[namekey].append(i['time'])
 
-    print(cinemas)
-    print(address)
-    print(time)
-    
+    #print(cinemas)
+    #print(address)
+    #print(time)
+
     return render_template('theatres.html',data = data, status = 'ok', theatre = cinemas, location = address, showtime = time)
 
 
@@ -146,7 +146,7 @@ def homepage_randomize():
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
-    print(dict)
+    #print(dict)
 
     #need to handle if no search results are returned from api call
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))

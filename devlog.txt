@@ -150,8 +150,8 @@ RavindraM -- 2022-12-15 13:03
 williamG -- 2022-12-15 13:10:
 --------------------------------------------------------------
 * completed search function for omdbapi
-* researching and testing new randomizer api 
-* began restructuring homepage 
+* researching and testing new randomizer api
+* began restructuring homepage
 ==============================================================
 
 
@@ -189,7 +189,7 @@ williamG -- 2022-12-18 23:51
   - cool css hover animations with linear gradient backgrounds
   - made search bar full length of container
   - secondary method to have longer plot summary in __init__.py that displays with read more button
-  - changed hover effect of recommedation button 
+  - changed hover effect of recommedation button
 * anime page revamp with same card concept as homepage
 * added vertical nav pills for theatres page to display movie showtime dates
 * made all nav bar sticky-top
@@ -212,4 +212,11 @@ JunHongW -- 2022-12-20 20:45
 * put watchmode key into txt file
 * imported requests
 * sent new set of keys to make sure demo didn't break
+==============================================================
+
+JunHongW -- 2022-12-21 17:25
+--------------------------------------------------------------
+* updated readme to more accurately show project
+* tracked keys temporarily for demo (put set of keys sent to tofr)
+* reviewed __init__.py, removed print statements
 ==============================================================
