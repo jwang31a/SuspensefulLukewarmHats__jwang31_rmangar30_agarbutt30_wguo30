@@ -56,14 +56,17 @@ def theatres():
 def anime():
     key = open("../app/keys/key_anime.txt", "r").read()
 
+    # Comment due to api limit
+    
     #ANIME
-    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
-    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
+    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
+    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
     
     #COMEDY
-    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
-    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
+    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
+    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
 
+    
     return render_template("anime.html")
 
 
@@ -96,7 +99,7 @@ def theatres_search():
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
-    url = f"https://serpapi.com/search?engine=google&location=New+York,+United+States&api_key={key}&q={q}+showtimes"
+    url = f"https://serpapi.com/search?engine=google&location=New+York,+United+States&api_key={key}&q={q}+english+showtimes"
     url = url.replace(" ", "+")
 
     # opens url as a string or Request object
