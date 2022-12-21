@@ -42,13 +42,13 @@ def landing():
 
 @app.route("/homepage", methods = ["GET", "POST"])
 def homepage():
-    return render_template("homepage.html")
+    return render_template("homepage.html", status = 'start')
 
 
 
 @app.route("/theatres", methods = ["GET", "POST"])
 def theatres():
-    return render_template("theatres.html")
+    return render_template("theatres.html", status = 'start')
 
 
 
@@ -76,7 +76,7 @@ def homepage_search():
     print(dict)
 
     #need to handle if no search results are returned from api call
-    return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))
+    return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot'], status = 'using'))
 
 
 
@@ -87,7 +87,7 @@ def theatres_search():
 
     #read apikey from key_serpapi.txt
     key = open("keys/key_serpapi.txt", "r").read()
-    url = f"https://serpapi.com/search?engine=google&api_key={key}&location={loc},+United+States&q={q}+showtimes"
+    url = f"https://serpapi.com/search?engine=google&location=New+York,+United+States&api_key={key}&q={q}+showtimes"
     url = url.replace(" ", "+")
 
     # opens url as a string or Request object
@@ -98,8 +98,26 @@ def theatres_search():
     # returns a KeyError that means no showtimes results were found for that
     # movie, so just say "no upcoming showtimes" or something like that
     data = dict['showtimes']
+    cinemas = {}
+    address= {}
+    time = {}
+    for item in data:
+        dictkey = item['day']
+        cinemas.update({dictkey : []})
+        for info in item['theaters']:
+            namekey = info['name']
+            address.update({namekey : []})
+            time.update({namekey: []})
+            cinemas[dictkey].append(namekey)
+            address[namekey].append(info['address'])
+            for i in info['showing']:
+                time[namekey].append(i['time'])
 
-    return data
+    print(cinemas)
+    print(address)
+    print(time)
+    
+    return render_template('theatres.html',data = data, status = 'ok', theatre = cinemas, location = address, showtime = time)
 
 
 
