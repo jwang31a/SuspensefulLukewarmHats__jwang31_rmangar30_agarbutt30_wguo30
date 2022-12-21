@@ -1,5 +1,5 @@
 from flask import Flask, session, render_template, request, redirect
-import sqlite3, auth, os
+import sqlite3, auth, os, requests
 import json, urllib.request
 
 #creates flask app
@@ -143,7 +143,6 @@ def logout():
     #db.close()
     #dbstory.close()
     return redirect("/")#goes home
-
 
 #if user tries to search for a movie that doesn't exist, there won't be any information, so we can't access the dictionary
 #this handles the nonexistent key
