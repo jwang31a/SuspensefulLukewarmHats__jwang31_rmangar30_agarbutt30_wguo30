@@ -41,6 +41,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/anime">Anime</a>
+            <a class="dropdown-item" href="/comedy">Comedy</a>
           </div>
         </li>
       </ul>
@@ -51,7 +52,7 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Profile</button>
         <div class="dropdown-menu dropdown-menu-right p-3">
-          <h2 style="text-align: center;"> Welcome {{username}}</h2>
+          <h2 style="text-align: center;"> Welcome!</h2>
           <div class="dropdown-divider"></div>
           <div style="text-align: center;">
             <form method="POST" action="/logout">
@@ -126,6 +127,31 @@
                       </p>
                     {% endif %}
                   {% endfor %}
+                  <!-- Messing with jinja stuff 
+                  {% for data1 in data %}
+                      {% for key,value in data1.items() -%}
+                        {% if key == 'theaters' %}
+                          {% for cinema in data1[key] %}
+                            {% for key1,value1 in cinema.items() -%}
+                              {% if key1 == 'address'%}
+                                <p> Location: {{value1}} </p>
+                              {% endif %}
+                            {% endfor %}
+                          {% endfor %}
+                        {% elif value == 'showing' %}
+                          {% for type in value %}
+                            {% for key2,value2 in type%}
+                              {% if key2 == 'type' %}
+                                <p> {{value2}}: </p>
+                              {% elif key2 == 'time' %}
+                              <button type="button" class="btn btn-outline-secondary btn-sm"> {{value2}}</button>
+                              {% endif %}
+                            {% endfor %}
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                  {% endfor %}
+                -->
                 </div>
               </div>
             </div>

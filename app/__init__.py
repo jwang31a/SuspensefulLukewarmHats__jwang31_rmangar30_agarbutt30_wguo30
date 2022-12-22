@@ -56,18 +56,69 @@ def theatres():
 def anime():
     key = open("../app/keys/key_anime.txt", "r").read()
 
-    # Comment due to api limit
-    
     #ANIME
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=33')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=33')
+    data = urllib.request.urlopen(f"https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_dsc&limit=12&genres=33")
+    data2 = urllib.request.urlopen(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=12&genres=33')
+    anime = json.load(data)
+    anime2 = json.load(data2)
+    titleid = []
+    titleid2 = []
+    cardinfo = {}
+    cardinfo2 = {}
+    for items in anime['titles']:
+        titleid.append(items['id'])
+    for ids in titleid:
+        info = json.load(urllib.request.urlopen(f'https://api.watchmode.com/v1/title/{ids}/details/?apiKey={key}'))
+        cardinfo[info['title']] = [info['poster'],info['plot_overview']]
+    for items in anime2['titles']:
+        titleid2.append(items['id'])
+    for ids in titleid2:
+        info = json.load(urllib.request.urlopen(f'https://api.watchmode.com/v1/title/{ids}/details/?apiKey={key}'))
+        cardinfo2[info['title']] = [info['poster'],info['plot_overview']]
+    #print(anime)
+    #print(cardinfo)
     
     #COMEDY
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
-    #response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
-
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=5&genres=4')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=5&genres=4')
+    data2 = urllib.request.urlopen(f"https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_dsc&limit=5&genres=4")
+    comedy = json.load(data2)
+    ##print(comedy)
     
-    return render_template("anime.html")
+    return render_template("anime.html", anime = cardinfo, anime2 = cardinfo2)
+
+
+@app.route("/comedy", methods = ["GET", "POST"])
+def comedy():
+    key = open("../app/keys/key_watchmode.txt", "r").read()
+
+    #COMEDY
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_asc&limit=12&genres=4')
+    response = requests.get(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=12&genres=4')
+    data = urllib.request.urlopen(f"https://api.watchmode.com/v1/list-titles/?apiKey={key}&sort_by=popularity_dsc&limit=12&genres=4")
+    data2 = urllib.request.urlopen(f'https://api.watchmode.com/v1/list-titles/?apiKey={key}&release_date_start=20220101&limit=12&genres=4')
+    comedy = json.load(data)
+    comedy2 = json.load(data2)
+    titleid = []
+    titleid2 = []
+    cardinfo = {}
+    cardinfo2 = {}
+    for items in comedy['titles']:
+        titleid.append(items['id'])
+    for ids in titleid:
+        info = json.load(urllib.request.urlopen(f'https://api.watchmode.com/v1/title/{ids}/details/?apiKey={key}'))
+        cardinfo[info['title']] = [info['poster'],info['plot_overview']]
+    for items in comedy2['titles']:
+        titleid2.append(items['id'])
+    for ids in titleid2:
+        info = json.load(urllib.request.urlopen(f'https://api.watchmode.com/v1/title/{ids}/details/?apiKey={key}'))
+        cardinfo2[info['title']] = [info['poster'],info['plot_overview']]
+    #print(comedy)
+    #print(cardinfo)
+    
+    return render_template("comedy.html", comedy = cardinfo, comedy2 = cardinfo2)
 
 
 
@@ -109,25 +160,35 @@ def theatres_search():
     # be weary, not all movies return showtimes data! if a dict["showtimes"]
     # returns a KeyError that means no showtimes results were found for that
     # movie, so just say "no upcoming showtimes" or something like that
-    data = dict['showtimes']
+    data = dict['showtimes'] #data is list of dictionary
     cinemas = {}
     address= {}
     time = {}
-    for item in data:
+    test = {}
+
+    #print(data)
+    for item in data: #goes through all the dictionary within list separated by date
+        #print(item)
+        #print("\n")
         dictkey = item['day']
+        #print(dictkey)
         cinemas.update({dictkey : []})
-        for info in item['theaters']:
+        for info in item['theaters']: # list of dictionary separated by theatre name
+            #print(info)
+            #print("\n")
             namekey = info['name']
             address.update({namekey : []})
             time.update({namekey: []})
             cinemas[dictkey].append(namekey)
             address[namekey].append(info['address'])
-            for i in info['showing']:
+            #print(cinemas)
+            #print("\n")
+            for i in info['showing']: #list of dictionary with different type
                 time[namekey].append(i['time'])
 
-    print(cinemas)
-    print(address)
-    print(time)
+    #print(cinemas)
+    #print(address)
+    #print(time)
     
     return render_template('theatres.html',data = data, status = 'ok', theatre = cinemas, location = address, showtime = time)
 

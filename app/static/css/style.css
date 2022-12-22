@@ -23,10 +23,6 @@ h1 {
     text-align: center;
 }
 
-h3{
-    color:rgb(55, 220, 215)
-}
-
 
 .navbar .dropdown-menu-right {
     right: 0; 
@@ -84,6 +80,11 @@ h3{
     background-size: cover;
 }
 
+.comedy{
+    background-image: url('https://image.freepik.com/free-vector/comedy-movie-neon-sign-luminous-3d-glasses-brick-wall-background_1262-13408.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
 .wrapper{
     display:flex;
     width: 100%;
@@ -124,6 +125,10 @@ h3{
     background: linear-gradient(rgba(0, 9, 176, 0.5),rgb(61, 185, 201));
 }
 
+.yellow:before{
+    background: linear-gradient(rgba(51, 0, 117, 0.5),rgb(188, 46, 195));
+}
+
 .homecard:hover:before{
     opacity: 1;
 }
@@ -142,7 +147,7 @@ h3{
     z-index: 3;
     color: #fff;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(35px);
     transition: 0.5s all;
 }
 

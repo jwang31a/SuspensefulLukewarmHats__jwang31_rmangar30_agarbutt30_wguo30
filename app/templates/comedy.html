@@ -10,7 +10,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body class="anime">
+<body class="comedy">
     <!-- JS scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -63,12 +63,12 @@
             </div>
         </ul>
     </nav>
-    <h1 style="color:azure"> Welcome to the anime page!</h1>
+    <h1 style="color:azure"> Welcome to the comedy page!</h1>
 
 
     
     <div class="container">
-    <!-- user search bar inputs
+      <!-- user search bar inputs
         <form class="row row-cols-2 p-2" action="/anime/search" method="POST">
             <div class="col-10">
                 <input type="search" name="query" class="form-control mr-sm-2" id="search" placeholder="Movie title">
@@ -78,13 +78,14 @@
             </div>
         </form>
     -->
+
         <!-- row of cards for different titles?-->
-        <h2 style = " color:rgb(55, 220, 215)"> Most popular </h2>
+        <h2 style = "color:rgb(55, 220, 55)"> Most popular </h2>
         <div class="row row-cols-1 row-cols-md-4 p-2">
-            {% for key,value in anime.items()%}
+            {% for key,value in comedy.items()%}
             <div class="col mb-4">
                 <div class="wrapper">
-                    <div class="homecard blue">
+                    <div class="homecard yellow">
                         <img src={{value[0]}} class="img-fluid w-100">
                         <div class="info">
                             <h5>{{key}}</h5>
@@ -96,12 +97,12 @@
             {% endfor %}
         </div>
 
-        <h2 style = " color:rgb(55, 220, 215)" > New this year </h2>
+        <h2 style = "color:rgb(55, 220, 55)"> New this year </h2>
         <div class="row row-cols-1 row-cols-md-4 p-2">
-            {% for key,value in anime2.items()%}
+            {% for key,value in comedy2.items()%}
             <div class="col mb-4">
                 <div class="wrapper">
-                    <div class="homecard blue">
+                    <div class="homecard yellow">
                         <img src={{value[0]}} class="img-fluid w-100">
                         <div class="info">
                             <h5>{{key}}</h5>
