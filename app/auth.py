@@ -32,7 +32,7 @@ def get_accounts(username, password):
     #c = db.cursor()
     c.execute("SELECT * FROM accounts;")
     response = c.fetchall()
-    print(response)
+    #print(response)
     for account in response:
         if account[0] == username and account[1] == password:
             return True

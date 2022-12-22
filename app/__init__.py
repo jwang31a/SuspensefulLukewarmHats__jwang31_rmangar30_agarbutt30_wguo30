@@ -137,7 +137,7 @@ def homepage_search():
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
-    print(dict)
+    #print(dict)
 
     #need to handle if no search results are returned from api call
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot'], status = 'using'))
@@ -207,7 +207,7 @@ def homepage_randomize():
     # opens url as a string or Request object
     data = urllib.request.urlopen(url)
     dict = json.load(data)
-    print(dict)
+    #print(dict)
 
     #need to handle if no search results are returned from api call
     return(render_template('homepage.html',title = dict['Title'],image=dict['Poster'], descriptionshort=dict['Plot'],descriptionlong=json.load(urllib.request.urlopen(longplot))['Plot']))
