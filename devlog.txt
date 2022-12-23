@@ -154,7 +154,6 @@ williamG -- 2022-12-15 13:10:
 * began restructuring homepage
 ==============================================================
 
-
 JunHongW -- 2022-12-15 21:15
 --------------------------------------------------------------
 * added testing directory in app to store api tests
@@ -214,9 +213,35 @@ JunHongW -- 2022-12-20 20:45
 * sent new set of keys to make sure demo didn't break
 ==============================================================
 
+williamG -- 2022-12-21 2:18
+--------------------------------------------------------------
+* theater page finally displays information (accordian)
+  - displays theater name
+  - displays location of theater
+  - displays movie showtimes
+==============================================================
+
 JunHongW -- 2022-12-21 17:25
 --------------------------------------------------------------
 * updated readme to more accurately show project
 * tracked keys temporarily for demo (put set of keys sent to tofr)
 * reviewed __init__.py, removed print statements
+==============================================================
+
+williamG -- 2022-12-22 1:27
+--------------------------------------------------------------
+* updated anime page
+  - 12 cards for each of the category (most popular and newest release)
+  - cards include movie poster and hover animation show title and plot
+* created a new comedy page under genres
+  - same concept as anime page (most popular and newest release, 12 cards each section)
+==============================================================
+
+williamG -- 2022-12-22 22:52
+--------------------------------------------------------------
+* final edits of design doc
+  - added theatres page and movie show time
+  - removed random recommendation button
+  - removed save list from user
+* commented recommendation button in homtpage.html
 ==============================================================
