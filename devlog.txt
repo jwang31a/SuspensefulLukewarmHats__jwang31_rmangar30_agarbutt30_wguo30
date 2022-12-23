@@ -243,5 +243,11 @@ williamG -- 2022-12-22 22:52
   - added theatres page and movie show time
   - removed random recommendation button
   - removed save list from user
-* commented recommendation button in homtpage.html
+* commented recommendation button in homepage.html
+==============================================================
+
+junHongW -- 2022-12-22 23:10
+--------------------------------------------------------------
+* edited design doc (component map and sitemap)
+* final design doc in place
 ==============================================================
